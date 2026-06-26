@@ -6,21 +6,20 @@
 }
 
 :root {
-    --primary: #004d40;      /* Kurumsal Koyu Yeşim */
-    --primary-dark: #00332c; /* Asil Orman Yeşili (Topbar ve Logo) */
-    --accent: #00a896;       /* Canlı Botanik Turkuazı */
+    --primary: #004d40;
+    --primary-dark: #00332c;
+    --accent: #00a896;
     --bg-light: #f4f7f9;
     --text-dark: #2b3a4a;
     --text-muted: #6c7a89;
     --white: #ffffff;
 }
 
-html { scroll-behavior: smooth; }
-body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden;}
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; width: 100%; position: relative;}
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* --- TOPBAR --- */
 .topbar {
     background-color: var(--primary-dark);
     color: #cbd5e1; font-size: 0.82rem; padding: 10px 0;
@@ -41,7 +40,6 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 .lang-select a { color: #cbd5e1; text-decoration: none; font-weight: 600; }
 .lang-select a.active { color: var(--accent); }
 
-/* --- NAVBAR (Yeşile Çalan Okaliptüs Beyazı Şerit) --- */
 .navbar {
     background-color: #ebf4f0; 
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
@@ -49,10 +47,10 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 }
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
 
-.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-left: -12px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logo-icon {
     background: var(--accent); color: var(--white); width: 42px; height: 42px;
-    border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;
 }
 
 .logo-text-group { display: flex; flex-direction: column; justify-content: center; }
@@ -70,10 +68,9 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 }
 .nav-links a:hover { color: var(--primary-dark); background-color: rgba(0, 168, 150, 0.16); }
 
-/* --- BUTTONLAR --- */
 .btn {
     padding: 12px 26px; border-radius: 6px; font-weight: 600; text-decoration: none;
-    transition: all 0.3s; display: inline-block; font-size: 0.9rem; cursor: pointer;
+    transition: all 0.3s; display: inline-block; font-size: 0.9rem; cursor: pointer; text-align: center;
 }
 .btn-primary { background-color: var(--primary); color: var(--white); }
 .btn-primary:hover { background-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 168, 150, 0.25); }
@@ -82,7 +79,6 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 .btn-outline:hover { background-color: var(--primary); color: var(--white); }
 .btn-large { padding: 14px 32px; font-size: 1rem; }
 
-/* --- DEV HERO BÖLÜMÜ --- */
 .hero {
     background: linear-gradient(135deg, #eaf2ee 0%, #d5e5dd 100%);
     padding: 75px 0 85px;
@@ -105,7 +101,7 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 
 .hero h1 {
     font-size: 3.1rem; color: var(--primary-dark); line-height: 1.18;
-    margin-bottom: 22px; font-weight: 700;
+    margin-bottom: 22px; font-weight: 700; word-wrap: break-word;
 }
 
 .highlight-blue { color: var(--accent); }
@@ -123,9 +119,9 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 }
 
 .badge-stat { color: var(--accent); font-weight: 700; font-size: 1.05rem; }
-.hero-buttons { display: flex; gap: 16px; justify-content: flex-start; }
+.hero-buttons { display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap; }
 
-.hero-image-side { position: relative; display: flex; justify-content: center; }
+.hero-image-side { position: relative; display: flex; justify-content: center; width: 100%; }
 
 .factory-frame {
     position: relative; width: 100%; max-width: 520px; height: 490px;
@@ -136,7 +132,7 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 .factory-frame:hover img { transform: scale(1.05); }
 
 .frame-overlay-badge {
-    position: absolute; bottom: 24px; left: 24px;
+    position: absolute; bottom: 24px; left: 24px; right: 24px;
     background: rgba(0, 51, 44, 0.92); backdrop-filter: blur(8px);
     color: var(--white); padding: 10px 18px; border-radius: 10px;
     display: flex; align-items: center; gap: 12px; font-weight: 500; font-size: 0.88rem;
@@ -145,7 +141,7 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 
 .pulse-dot {
     width: 10px; height: 10px; background: #34d399;
-    border-radius: 50%; animation: pulseGreen 2s infinite;
+    border-radius: 50%; animation: pulseGreen 2s infinite; flex-shrink: 0;
 }
 
 @keyframes pulseGreen {
@@ -159,7 +155,6 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
     border-radius: 50%; filter: blur(60px); top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;
 }
 
-/* --- KURUMSAL ÖZET --- */
 .about { padding: 90px 0; background: var(--white); }
 .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: center; }
 .about-text h2 { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
@@ -169,7 +164,7 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 .about-features { display: flex; flex-direction: column; gap: 12px; font-weight: 500; color: var(--text-dark); }
 .feat i { color: var(--accent); margin-right: 10px; font-size: 1.1rem;}
 
-.about-stats { display: flex; gap: 20px; }
+.about-stats { display: flex; gap: 20px; width: 100%; }
 .stat-box {
     background: var(--bg-light); padding: 40px 30px; border-radius: 12px;
     flex: 1; text-align: center; border-bottom: 4px solid var(--primary);
@@ -178,7 +173,6 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 .stat-box h3 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 4px;}
 .stat-box span { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
 
-/* --- BÖLÜM BAŞLIKLARI --- */
 .section-title { text-align: center; max-width: 600px; margin: 0 auto 60px; }
 .section-title span { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;}
 .section-title h2 { font-size: 2.2rem; color: var(--primary); margin: 8px 0 15px; }
@@ -188,7 +182,6 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 .section-title.light h2 { color: var(--white); }
 .section-title.light p { color: #cbd5e1; }
 
-/* --- ÜRÜNLER --- */
 .products { padding: 90px 0; }
 .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
@@ -218,7 +211,6 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 }
 .btn-link:hover { gap: 10px; }
 
-/* --- SERTİFİKALAR --- */
 .certificates { background-color: var(--primary-dark); padding: 100px 0; }
 .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
 
@@ -240,7 +232,7 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 .cert-content h3 { font-size: 1.4rem; color: var(--white); margin-bottom: 12px; }
 .cert-content p { color: #cbd5e1; font-size: 0.88rem; line-height: 1.65; margin-bottom: 22px; }
 
-.cert-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; }
+.cert-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px; flex-wrap: wrap; gap: 10px;}
 .status-badge { color: #34d399; font-size: 0.82rem; font-weight: 500; }
 
 .view-btn {
@@ -249,14 +241,13 @@ body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: h
 }
 .view-btn:hover { background: var(--accent); transform: translateY(-1px); }
 
-/* --- FOOTER --- */
 footer { background: #001f1a; color: #8c9ba5; padding: 55px 0 30px; font-size: 0.9rem; }
 .footer-grid { display: flex; flex-direction: column; gap: 30px; }
 .footer-info h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 18px; }
-.footer-info p { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; }
-.footer-info i { color: var(--accent); margin-top: 4px;}
+.footer-info p { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; line-height: 1.5; word-break: break-word;}
+.footer-info i { color: var(--accent); margin-top: 4px; flex-shrink: 0;}
 
-.footer-social { margin-top: 25px; display: flex; align-items: center; gap: 12px; }
+.footer-social { margin-top: 25px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;}
 .footer-social span { color: var(--white); font-weight: 500; font-size: 0.9rem; margin-right: 6px; }
 .footer-social a {
     display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px;
@@ -267,23 +258,47 @@ footer { background: #001f1a; color: #8c9ba5; padding: 55px 0 30px; font-size: 0
 
 .footer-copyright { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; text-align: center; font-size: 0.82rem; }
 
-/* --- MOBİL UYUMLULUK --- */
 @media (max-width: 992px) {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .hero-text-side { text-align: center; }
-    .hero-buttons { justify-content: center; }
-    .factory-frame { height: 360px; }
+    .hero-buttons { justify-content: center; width: 100%; }
+    .factory-frame { height: 380px; max-width: 100%; }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid { grid-template-columns: 1fr; gap: 40px;}
+    .cert-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
     .topbar { display: none; }
-    .hero h1 { font-size: 2.2rem; }
-    .products-grid, .cert-grid { grid-template-columns: 1fr; }
+    .hero { padding: 40px 0 50px; }
+    .hero h1 { font-size: 1.95rem; margin-bottom: 15px;}
+    .hero-badge { font-size: 0.78rem; padding: 6px 12px; }
+    .hero-buttons { flex-direction: column; gap: 10px; }
+    .hero-buttons .btn { width: 100%; }
+    .factory-frame { height: 260px; border-width: 2px;}
+    .frame-overlay-badge { font-size: 0.75rem; bottom: 12px; left: 12px; right: 12px; padding: 8px 12px;}
+    
+    .products-grid { grid-template-columns: 1fr; gap: 20px;}
     .nav-links { display: none; }
-    .cert-card { flex-direction: column; text-align: center; padding: 30px 20px; }
-    .cert-paper-box { width: 170px; height: 240px; margin-bottom: 15px; }
-    .footer-info p { flex-direction: column; gap: 4px; }
-    .footer-social { justify-content: center; margin-top: 20px; }
+    
+    .about { padding: 60px 0; }
+    .about-text h2 { font-size: 1.6rem; }
+    .about-stats { flex-direction: column; gap: 15px; }
+    .stat-box { padding: 25px 20px; }
+    
+    .section-title h2 { font-size: 1.75rem; }
+    
+    .cert-card { flex-direction: column; text-align: center; padding: 25px 18px; gap: 18px;}
+    .cert-paper-box { width: 160px; min-width: 160px; height: 226px; margin: 0 auto; }
+    .cert-footer { flex-direction: column; gap: 12px; justify-content: center; }
+    .view-btn { width: 100%; justify-content: center; }
+    
+    .footer-info p { flex-direction: row; font-size: 0.85rem;}
+    .footer-social { justify-content: flex-start; }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .navbar { position: relative; }
+    .hero { padding: 30px 0; }
+    .factory-frame { height: 220px; }
 }
